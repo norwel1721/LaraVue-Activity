@@ -68,7 +68,7 @@ class LoginRequest extends FormRequest
         if ($this->user() && is_null($this->user()->email_verified_at)) {
             Auth::logout(); // Log the user out if email is not verified
             throw ValidationException::withMessages([
-                'email' => trans('auth.email_not_verified'),
+                'email' => trans('Email not verified'),
             ]);
         }
 
